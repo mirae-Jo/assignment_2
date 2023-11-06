@@ -36,9 +36,9 @@ const App = () => {
     const newTodos = toDoLists.filter((todo) => todo.id !== id);
 
     const doneTodos = toDoLists.filter((todo) => todo.id === id);
-    const filterd = doneTodos[0];
-    filterd.isDone = true;
-    setToDos([...newTodos, filterd]);
+    const filtered = doneTodos[0];
+    filtered.isDone = true;
+    setToDos([...newTodos, filtered]);
   };
 
   // 삭제버튼
@@ -52,9 +52,9 @@ const App = () => {
     const newTodos = toDoLists.filter((todo) => todo.id !== id);
 
     const doneTodos = toDoLists.filter((todo) => todo.id === id);
-    const filterd = doneTodos[0];
-    filterd.isDone = false;
-    setToDos([...newTodos, filterd]);
+    const filtered = doneTodos[0];
+    filtered.isDone = false;
+    setToDos([...newTodos, filtered]);
   };
 
   return (
