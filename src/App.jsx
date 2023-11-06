@@ -1,15 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
 import AddBtn from "./components/AddBtn";
-// import Todo from "./components/Todo";
-import DoneBtn from "./components/DoneBtn";
+import Done from "./components/Done";
 
 const App = () => {
-  // const toDos = [
-  //   { id: 1, todo: "식사" },
-  //   { id: 2, todo: "숙제" },
-  //   { id: 3, todo: "공부" },
-  // ];
   const [toDoLists, setToDos] = useState([
     { id: 1, title: "공부", todo: "리액트", isDone: false },
     { id: 2, title: "운동", todo: "달리기", isDone: false },
@@ -83,7 +77,8 @@ const App = () => {
             {toDoLists
               .filter((item) => item.isDone === false)
               .map((item) => (
-                <DoneBtn
+                <Done
+                  key={item.id}
                   item={item}
                   clickDoneBtnHandler={clickDoneBtnHandler}
                   clickRemoveBtnHandler={clickRemoveBtnHandler}
@@ -95,7 +90,8 @@ const App = () => {
             {toDoLists
               .filter((item) => item.isDone === true)
               .map((item) => (
-                <CancleBtn
+                <Cancle
+                  key={item.id}
                   item={item}
                   clickCancelBtnHandler={clickCancelBtnHandler}
                   clickRemoveBtnHandler={clickRemoveBtnHandler}
@@ -150,10 +146,10 @@ const App = () => {
     </div>
   );
 };
-const CancleBtn = ({ item, clickCancelBtnHandler, clickRemoveBtnHandler }) => {
+const Cancle = ({ item, clickCancelBtnHandler, clickRemoveBtnHandler }) => {
   return (
     <div>
-      <div key={item.id} className="component-style">
+      <div className="component-style">
         <div>{item.title}</div>
         <div>{item.todo}</div>
 

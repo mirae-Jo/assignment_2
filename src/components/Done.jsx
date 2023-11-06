@@ -1,7 +1,7 @@
-const DoneBtn = ({ item, clickDoneBtnHandler, clickRemoveBtnHandler }) => {
+const Done = ({ item, clickDoneBtnHandler, clickRemoveBtnHandler }) => {
   return (
     <div>
-      <div key={item.id} className="component-style">
+      <div className="component-style">
         <div>{item.title}</div>
         <div>{item.todo}</div>
 
@@ -11,4 +11,4 @@ const DoneBtn = ({ item, clickDoneBtnHandler, clickRemoveBtnHandler }) => {
     </div>
   );
 };
-export default DoneBtn;
+export default Done;
